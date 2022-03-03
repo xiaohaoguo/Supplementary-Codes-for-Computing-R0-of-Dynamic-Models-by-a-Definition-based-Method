@@ -78,9 +78,10 @@ for i = 1:4
     % R_ij matrix for time segment i
     Rmat = B .* N_hunan * c;
     
-    % R0 for segment i 
-    R0_DEF = sum(P_hunan'.*sum(Rmat,2));    % definition-based method
-    R0_NGM = max(eig(B.*N_hunan)) * c;      % next-generation method
+    % R0 for time segment i 
+    fprintf('\n \n R0 for time segment %d: \n', i);
+    R0_DEF = sum(P_hunan'.*sum(Rmat,2))    % definition-based method
+    R0_NGM = max(eig(B.*N_hunan)) * c      % next-generation method
     
 
     %%% visualizing the R_ij matrix by heatmaps 
